@@ -7,8 +7,8 @@ const postRoutes = require("./routes/appointment.js");
 const contactRoutes = require("./routes/contact.js");
 
 const razorpay = new Razorpay({
-  key_id: "rzp_test_iy0Rqq8BWgZAGy",
-  key_secret: "MAvpOo4XAGnGTmNzMI0s9uRS",
+  key_id: "razorpay id",
+  key_secret: "razorpay secret key",
 });
 
 const app = express();
@@ -100,7 +100,7 @@ app.get("/", (req, res) => {
 });
 
 const CONNECTION_URL =
-  "mongodb+srv://nutritional-portal:nutritional-portal123@cluster1.t8urf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://<name of data base>@cluster1.t8urf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 5000;
 
