@@ -1,14 +1,5 @@
-import express from "express";
+const express = require("express");
 
-import {
-  getAppointment,
-  createAppointment,
-  getTest,
-} from "../controller/post.js";
+const post = require("../controller/contact.js");
 
 const router = express.Router();
-
-router.get("/", getAppointment);
-router.post("/", createAppointment);
-router.get("/test", getTest);
-export default router;

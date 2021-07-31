@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const postSchema = mongoose.Schema({
   firstName: String,
@@ -9,4 +10,4 @@ const postSchema = mongoose.Schema({
 
 const PostMessage = mongoose.model("PostMessage", postSchema);
 
-export default PostMessage;
+module.exports.PostMessage = PostMessage;

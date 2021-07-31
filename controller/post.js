@@ -1,6 +1,6 @@
-import PostMessage from "../models/postMessage.js";
-
-export const getAppointment = async (req, res) => {
+// import PostMessage from "../models/postMessage.js";
+const PostMessage = require("../models/postMessage.js");
+module.exports.getAppointment = async (req, res) => {
   try {
     const PostMessages = await PostMessage.find();
     res.status(200).json(PostMessages);
@@ -9,7 +9,7 @@ export const getAppointment = async (req, res) => {
   }
 };
 
-export const createAppointment = async (req, res) => {
+module.exports.createAppointment = async (req, res) => {
   const post = req.body;
 
   const newPost = new PostMessage(post);
@@ -23,6 +23,6 @@ export const createAppointment = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
-export const getTest = async (req, res) => {
+module.exports.getTest = async (req, res) => {
   res.send("this is something");
 };

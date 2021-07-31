@@ -1,6 +1,6 @@
-import ContactModel from "../models/ContactModel.js";
-
-export const getContact = async (req, res) => {
+// import ContactModel from "../models/ContactModel.js";
+const ContactModel = require("../models/ContactModel.js");
+module.exports.getContact = async (req, res) => {
   try {
     const ContactModel = await ContactModel.find();
     res.status(200).json(ContactModel);
@@ -9,7 +9,7 @@ export const getContact = async (req, res) => {
   }
 };
 
-export const createContact = async (req, res) => {
+module.exports.createContact = async (req, res) => {
   const contact = req.body;
 
   const newContact = new ContactModel(contact);
@@ -23,6 +23,6 @@ export const createContact = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
-export const getTest = async (req, res) => {
+module.exports.getTest = async (req, res) => {
   res.send("this is contact test");
 };
